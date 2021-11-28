@@ -11,6 +11,21 @@
 		C5249881275310C500D1B636 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5249880275310C500D1B636 /* ContentView.swift */; };
 		C5249883275310C700D1B636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5249882275310C700D1B636 /* Assets.xcassets */; };
 		C5249886275310C700D1B636 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5249885275310C700D1B636 /* Preview Assets.xcassets */; };
+		C524988D2753110200D1B636 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524988C2753110200D1B636 /* Events.swift */; };
+		C524988F2753112900D1B636 /* ActivitySets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524988E2753112900D1B636 /* ActivitySets.swift */; };
+		C52498912753114B00D1B636 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498902753114B00D1B636 /* Activity.swift */; };
+		C52498932753116300D1B636 /* EditEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498922753116300D1B636 /* EditEventsView.swift */; };
+		C5249895275314FC00D1B636 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5249894275314FC00D1B636 /* NewEventView.swift */; };
+		C52498972753151C00D1B636 /* ChooseTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498962753151C00D1B636 /* ChooseTimeView.swift */; };
+		C52498992753153100D1B636 /* EditActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498982753153000D1B636 /* EditActivityView.swift */; };
+		C524989B2753154200D1B636 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524989A2753154200D1B636 /* ActivitiesView.swift */; };
+		C524989D2753157200D1B636 /* ActivitySetsToEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524989C2753157200D1B636 /* ActivitySetsToEditView.swift */; };
+		C524989F2753158300D1B636 /* NewActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C524989E2753158300D1B636 /* NewActivityView.swift */; };
+		C52498A12753159000D1B636 /* NewActivitySetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498A02753159000D1B636 /* NewActivitySetView.swift */; };
+		C52498A3275315AA00D1B636 /* EventsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498A2275315AA00D1B636 /* EventsData.swift */; };
+		C52498A5275315B500D1B636 /* ActivitySetsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498A4275315B500D1B636 /* ActivitySetsData.swift */; };
+		C52498A72753160100D1B636 /* ChooseActivitySetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498A62753160100D1B636 /* ChooseActivitySetView.swift */; };
+		C52498A92753162D00D1B636 /* TimingGuidelinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52498A82753162D00D1B636 /* TimingGuidelinesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +34,22 @@
 		C5249880275310C500D1B636 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C5249882275310C700D1B636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5249885275310C700D1B636 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C524988C2753110200D1B636 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		C524988E2753112900D1B636 /* ActivitySets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySets.swift; sourceTree = "<group>"; };
+		C52498902753114B00D1B636 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		C52498922753116300D1B636 /* EditEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventsView.swift; sourceTree = "<group>"; };
+		C5249894275314FC00D1B636 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
+		C52498962753151C00D1B636 /* ChooseTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTimeView.swift; sourceTree = "<group>"; };
+		C52498982753153000D1B636 /* EditActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditActivityView.swift; sourceTree = "<group>"; };
+		C524989A2753154200D1B636 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
+		C524989C2753157200D1B636 /* ActivitySetsToEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySetsToEditView.swift; sourceTree = "<group>"; };
+		C524989E2753158300D1B636 /* NewActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityView.swift; sourceTree = "<group>"; };
+		C52498A02753159000D1B636 /* NewActivitySetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivitySetView.swift; sourceTree = "<group>"; };
+		C52498A2275315AA00D1B636 /* EventsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsData.swift; sourceTree = "<group>"; };
+		C52498A4275315B500D1B636 /* ActivitySetsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySetsData.swift; sourceTree = "<group>"; };
+		C52498A62753160100D1B636 /* ChooseActivitySetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseActivitySetView.swift; sourceTree = "<group>"; };
+		C52498A82753162D00D1B636 /* TimingGuidelinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingGuidelinesView.swift; sourceTree = "<group>"; };
+		C52498AA27532D6900D1B636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +84,23 @@
 			children = (
 				C524987E275310C500D1B636 /* LateivaApp.swift */,
 				C5249880275310C500D1B636 /* ContentView.swift */,
+				C52498922753116300D1B636 /* EditEventsView.swift */,
+				C5249894275314FC00D1B636 /* NewEventView.swift */,
+				C52498962753151C00D1B636 /* ChooseTimeView.swift */,
+				C52498A62753160100D1B636 /* ChooseActivitySetView.swift */,
+				C52498A82753162D00D1B636 /* TimingGuidelinesView.swift */,
+				C52498982753153000D1B636 /* EditActivityView.swift */,
+				C524989A2753154200D1B636 /* ActivitiesView.swift */,
+				C524989C2753157200D1B636 /* ActivitySetsToEditView.swift */,
+				C524989E2753158300D1B636 /* NewActivityView.swift */,
+				C52498A02753159000D1B636 /* NewActivitySetView.swift */,
+				C524988C2753110200D1B636 /* Events.swift */,
+				C524988E2753112900D1B636 /* ActivitySets.swift */,
+				C52498902753114B00D1B636 /* Activity.swift */,
+				C52498A2275315AA00D1B636 /* EventsData.swift */,
+				C52498A4275315B500D1B636 /* ActivitySetsData.swift */,
 				C5249882275310C700D1B636 /* Assets.xcassets */,
+				C52498AA27532D6900D1B636 /* Info.plist */,
 				C5249884275310C700D1B636 /* Preview Content */,
 			);
 			path = Lateiva;
@@ -137,8 +184,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52498912753114B00D1B636 /* Activity.swift in Sources */,
+				C524989D2753157200D1B636 /* ActivitySetsToEditView.swift in Sources */,
+				C52498A3275315AA00D1B636 /* EventsData.swift in Sources */,
+				C524988D2753110200D1B636 /* Events.swift in Sources */,
+				C52498972753151C00D1B636 /* ChooseTimeView.swift in Sources */,
+				C52498A5275315B500D1B636 /* ActivitySetsData.swift in Sources */,
+				C524988F2753112900D1B636 /* ActivitySets.swift in Sources */,
 				C5249881275310C500D1B636 /* ContentView.swift in Sources */,
+				C52498932753116300D1B636 /* EditEventsView.swift in Sources */,
 				C524987F275310C500D1B636 /* LateivaApp.swift in Sources */,
+				C5249895275314FC00D1B636 /* NewEventView.swift in Sources */,
+				C52498A92753162D00D1B636 /* TimingGuidelinesView.swift in Sources */,
+				C52498A72753160100D1B636 /* ChooseActivitySetView.swift in Sources */,
+				C52498A12753159000D1B636 /* NewActivitySetView.swift in Sources */,
+				C52498992753153100D1B636 /* EditActivityView.swift in Sources */,
+				C524989F2753158300D1B636 /* NewActivityView.swift in Sources */,
+				C524989B2753154200D1B636 /* ActivitiesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,17 +334,20 @@
 				DEVELOPMENT_TEAM = 5CV78Q3ZPZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lateiva/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sanjith.Lateiva;
+				PRODUCT_BUNDLE_IDENTIFIER = sanjith.laterminator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -301,17 +366,20 @@
 				DEVELOPMENT_TEAM = 5CV78Q3ZPZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lateiva/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = sanjith.Lateiva;
+				PRODUCT_BUNDLE_IDENTIFIER = sanjith.laterminator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
