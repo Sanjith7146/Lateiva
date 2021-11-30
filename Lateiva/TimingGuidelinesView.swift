@@ -11,6 +11,7 @@ struct TimeSpentVC: View {
     
     @State var activityArray: [Activity] = []
     @State var timeDiff: Int
+    @State var showAlert = false
     
     
     init(something: ActivitySets, hello: Int) {
@@ -149,6 +150,13 @@ struct TimeSpentVC: View {
             .listStyle(.plain)
         }.navigationBarTitle(Text("To do:"))
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+            .navigationBarItems(trailing: Button(action: {
+                showAlert = true
+            }, label: {
+                Image(systemName: "info.circle")
+            }).alert(isPresented: $showAlert) {
+                Alert(title: Text("Not enough time"), message: Text("If you see 0 min in your activity, it means that there is not enough time to complete it. Hence, you can skip it and proceed to the next activity or change the times your choose to give yourself sufficeint time to complete the activities"))
+            })
     }
 }
 
