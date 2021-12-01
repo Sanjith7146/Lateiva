@@ -51,7 +51,12 @@ struct startTimeVC: View {
                     .padding(.bottom)
             }
             
-            Section {
+            Section() {
+                if timeDiff < 0{
+                    Text("Tommorow")
+                        .padding([.bottom, .trailing])
+                        .frame(maxWidth: .infinity,alignment: .center)
+                }
                 DatePicker(
                     "",
                     selection: $date1,
@@ -64,8 +69,8 @@ struct startTimeVC: View {
                     .frame(maxWidth: .infinity, maxHeight: 150, alignment: .leading)
             } header: {
                 Text("When would you like to leave your house?").padding(.bottom)
+                
             }
-            
             NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
                 Button {
                     
@@ -77,11 +82,17 @@ struct startTimeVC: View {
                         .frame(maxWidth: .infinity, minHeight: 60)
                 }
             }
+            
+            
+            
         }
         .navigationBarTitle(Text("Hello"))
         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
     }
     
+    func hidden(_ shouldHide: Bool) -> some View {
+        opacity(shouldHide ? 0 : 1)
+    }
     struct startTimeVC_Previews: PreviewProvider {
         static var previews: some View {
             startTimeVC(setsa: .constant([])).preferredColorScheme(.light)

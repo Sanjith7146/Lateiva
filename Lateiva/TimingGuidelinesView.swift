@@ -12,6 +12,10 @@ struct TimeSpentVC: View {
     @State var activityArray: [Activity] = []
     @State var timeDiff: Int
     @State var showAlert = false
+    @State var showDetail: Bool = false
+    @State var timeDiff2: Int = 0
+
+    
     
     
     init(something: ActivitySets, hello: Int) {
@@ -25,6 +29,7 @@ struct TimeSpentVC: View {
     @State var set: ActivitySets
     @State var time1: [Int] = [0]
     var body: some View {
+        
         VStack(alignment:.leading){
             List(activityArray) { timings in
                 VStack(alignment:.leading){
@@ -87,7 +92,12 @@ struct TimeSpentVC: View {
                         
                     }
                     let newValue = time1[..<(activityArray.count+1)]
-                    let timeValue = timeDiff/(newValue.reduce(0, +))
+                    if timeDiff < 0 {
+                        timeDiff2 = timeDiff + (24*60)
+                    } else {
+                        timeDiff2 = timeDiff
+                    }
+                    let timeValue = timeDiff2/(newValue.reduce(0, +))
                     for (index, i) in
                             activityArray.enumerated() {
                         
@@ -135,7 +145,7 @@ struct TimeSpentVC: View {
                         }
                     }
                     print(newValue)
-                    
+                    print(timeDiff2)
                     print(timeDiff)
                     print(timeValue)
                     print(set.activities)

@@ -14,9 +14,10 @@ struct ContentView: View {
     @State var isSheetEnabled3 = false
     @Binding var events: [Event]
     @Binding var setsa: [ActivitySets]
-    
     var filterevents: [Event] {
-        return events.filter {Calendar.current.isDateInToday($0.date)}
+        return (events
+                    .filter {Calendar.current.isDateInToday($0.date)}
+                    .sorted {$0.date.timeIntervalSince1970 < $1.date.timeIntervalSince1970})
     }
     
     var body: some View {
@@ -137,4 +138,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(events: .constant([Event(name: "This is a sample", Location: "Please create your event", date: Date.now)]), setsa: .constant([ActivitySets(name: "Sample", activities: [Activity(name1: "Create your Own Now", timeSpending: 2, Percentage: "100%", Priority: "Click on the + icon", minTime: 1, maxTime: 5)])])).environment(\.colorScheme, .light)
     }
 }
-

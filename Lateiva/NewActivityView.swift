@@ -50,9 +50,9 @@ struct NewActivityVC: View {
                     HStack {
                         Spacer()
                         Button {
-                            newlyMadeActivity(newActivity)
+                            self.presentationMode.wrappedValue.dismiss();  newlyMadeActivity(newActivity)
                             print(newActivity.Priority)
-                            presentationMode.wrappedValue.dismiss()
+                            
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
