@@ -14,7 +14,7 @@ struct TimeSpentVC: View {
     @State var showAlert = false
     @State var showDetail: Bool = false
     @State var timeDiff2: Int = 0
-
+    
     
     
     
@@ -78,7 +78,7 @@ struct TimeSpentVC: View {
                 }
                 .onAppear{
                     for n in activityArray{
-                        if n.Priority == "A Must Do"{
+                        if n.Priority == "Very High Priority"{
                             time1.append(5)
                         } else if n.Priority == "High Priority" {
                             time1.append(4)
@@ -101,7 +101,7 @@ struct TimeSpentVC: View {
                     for (index, i) in
                             activityArray.enumerated() {
                         
-                        if i.Priority == "A Must Do"{
+                        if i.Priority == "Very High Priority"{
                             
                             for activity in activityArray{
                                 if activity.id == i.id {

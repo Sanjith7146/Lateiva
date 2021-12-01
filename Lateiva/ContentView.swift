@@ -21,7 +21,6 @@ struct ContentView: View {
     }
     
     var body: some View {
-        
         NavigationView {
             VStack(alignment:.leading){
                 Text(" Tap on one of your events to continue")

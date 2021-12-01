@@ -43,7 +43,7 @@ struct EditActivityVC: View {
                 Section(header: Text("Priority")) {
                     
                     Picker("Priority", selection: $EditActivities.Priority) {
-                        Text("A Must Do").tag("A Must Do")
+                        Text("Very High Priority").tag("Very High Priority")
                         Text("High Priority").tag("High Priority")
                         Text("Medium Priority").tag("Medium Priority")
                         Text("Low Priority").tag("Low Priority")
@@ -75,7 +75,6 @@ struct EditActivityVC: View {
                         Spacer()
                     }
                 }
-                
             }
             .navigationTitle("Edit Activity")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))

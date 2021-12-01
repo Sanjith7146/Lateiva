@@ -82,9 +82,6 @@ struct startTimeVC: View {
                         .frame(maxWidth: .infinity, minHeight: 60)
                 }
             }
-            
-            
-            
         }
         .navigationBarTitle(Text("Hello"))
         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))

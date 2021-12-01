@@ -11,7 +11,6 @@ enum EditAction {
     case cancel
     case delete
     case save (Event)
-    
 }
 
 struct editEventsVC: View {
@@ -28,11 +27,12 @@ struct editEventsVC: View {
         ...
         calendar.date(from:endComponents)!
     }()
+    
     init(event: Event, dismiss: @escaping (EditAction) -> Void) {
         self.dismiss = dismiss
         self._event = State(initialValue: event)
-        
     }
+    
     var body: some View {
         NavigationView {
             Form {

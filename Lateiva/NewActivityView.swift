@@ -37,7 +37,7 @@ struct NewActivityVC: View {
                 Section(header: Text("Priority")) {
                     
                     Picker("Priority", selection: $newActivity.Priority) {
-                        Text("A Must Do").tag("A Must Do")
+                        Text("Very High Priority").tag("Very High Priority")
                         Text("High Priority").tag("High Priority")
                         Text("Medium Priority").tag("Medium Priority")
                         Text("Low Priority").tag("Low Priority")

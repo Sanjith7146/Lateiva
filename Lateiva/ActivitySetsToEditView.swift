@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-
-
 struct ActivitySetsForEditVC: View {
     
     @State var isSheetEnabled4 = false
