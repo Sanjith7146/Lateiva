@@ -9,15 +9,6 @@ import SwiftUI
 
 struct TimeSpentVC: View {
     
-    @State var activityArray: [Activity] = []
-    @State var timeDiff: Int
-    @State var showAlert = false
-    @State var showDetail: Bool = false
-    @State var timeDiff2: Int = 0
-    
-    
-    
-    
     init(something: ActivitySets, hello: Int) {
         self._set = State(initialValue: something)
         
@@ -26,8 +17,14 @@ struct TimeSpentVC: View {
         
     }
     
+    @State var activityArray: [Activity] = []
+    @State var timeDiff: Int
+    @State var showAlert = false
+    @State var showDetail: Bool = false
+    @State var timeDiff2: Int = 0
     @State var set: ActivitySets
     @State var time1: [Int] = [0]
+
     var body: some View {
         
         VStack(alignment:.leading){
@@ -158,8 +155,7 @@ struct TimeSpentVC: View {
             }
             
             .listStyle(.plain)
-        }.navigationBarTitle(Text("To do:"))
-            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+        }   .navigationBarTitle(Text("To do:"))
             .navigationBarItems(trailing: Button(action: {
                 showAlert = true
             }, label: {

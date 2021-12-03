@@ -12,8 +12,10 @@ struct ContentView: View {
     @State var selectedEvent: Event? = nil
     @State var isSheetEnabled2 = false
     @State var isSheetEnabled3 = false
+    @State var showAlert1 = false
     @Binding var events: [Event]
     @Binding var setsa: [ActivitySets]
+
     var filterevents: [Event] {
         return (events
                     .filter {Calendar.current.isDateInToday($0.date)}
@@ -94,16 +96,27 @@ struct ContentView: View {
                 .buttonStyle(.plain)
             }
             .navigationBarTitle(Text("Events"))
-            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+            
+            .navigationBarItems(trailing: Button(action: {
+                showAlert1 = true
+            }, label: {
+                Image(systemName: "info.circle")
+            }).alert(isPresented: $showAlert1) {
+                Alert(title: Text("Events disappearing?"), message: Text("If your events are not today, it would have disappeared. However, it will appear on the day you set it to be so that you can plan your time for that event!"))
+            }).foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+            
             .navigationBarItems(trailing: Button(action: {
                 isSheetEnabled2 = true
             }, label: {
                 Image(systemName: "plus")
             }))
+            
             .navigationBarItems(leading: NavigationLink(destination: ActivitySetsForEditVC(setsa: $setsa)){
                 Text("Activities")
             })
+            
             .navigationBarItems(trailing: EditButton())
+            
             
         }
         .sheet(item: $selectedEvent){ selectedEvent in
