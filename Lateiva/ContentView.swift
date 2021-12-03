@@ -103,7 +103,7 @@ struct ContentView: View {
                 Image(systemName: "info.circle")
             }).alert(isPresented: $showAlert1) {
                 Alert(title: Text("Events disappearing?"), message: Text("If your events are not today, it would have disappeared. However, it will appear on the day you set it to be so that you can plan your time for that event!"))
-            }).foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+            }).foregroundColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))
             
             .navigationBarItems(trailing: Button(action: {
                 isSheetEnabled2 = true
