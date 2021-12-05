@@ -14,3 +14,11 @@ struct Event : Identifiable, Equatable, Codable {
     var date : Date
     
 }
+
+struct Day: Identifiable {
+    var id = UUID()
+    var title: String
+    var occurrences: [Event]
+    var date: Date
+}
+

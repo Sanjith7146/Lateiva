@@ -14,17 +14,10 @@ struct newEventVC: View {
     @State var eventsss = Event(name: "",
                                 Location: "",
                                 date: Date.now)
-    let dateRange: ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
-        let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
-        return calendar.date(from:startComponents)!
-        ...
-        calendar.date(from:endComponents)!
-    }()
     
     var body: some View {
         NavigationView {
+            
             Form {
                 Section(header: Text("Information")) {
                     TextField("Name", text: $eventsss.name).listRowSeparator(.visible)
@@ -34,14 +27,13 @@ struct newEventVC: View {
                     DatePicker(
                         "Date",
                         selection: $eventsss.date,
-                        in: dateRange,
+                        in: Date.now...Date.now.addingTimeInterval(31536000),
                         displayedComponents: [.date, .hourAndMinute]
                     )
                         .datePickerStyle(GraphicalDatePickerStyle())
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.796, green: 0.796, blue: 0.805))
                         .padding(.bottom)
-                    
                 }
                 
                 Section {

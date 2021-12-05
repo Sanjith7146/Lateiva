@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewActivityVC: View {
+  
     @Environment(\.presentationMode) var presentationMode
     @State var newActivity = Activity(name1: "", timeSpending: 0, Percentage: "", Priority: "", minTime: 0 , maxTime: 1)
     var newlyMadeActivity: (Activity) -> Void
@@ -17,7 +18,6 @@ struct NewActivityVC: View {
         formatter.numberStyle = .decimal
         return formatter
     }()
-    
     
     var body: some View {
         NavigationView {

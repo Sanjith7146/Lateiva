@@ -15,23 +15,15 @@ enum EditAction {
 
 struct editEventsVC: View {
     
-    @Environment(\.presentationMode) var presentationMode
-    @State var event: Event
-    var dismiss : (EditAction) -> Void
-    
-    let dateRange: ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2021, month: 1, day: 1)
-        let endComponents = DateComponents(year: 2021, month: 12, day: 31, hour: 23, minute: 59, second: 59)
-        return calendar.date(from:startComponents)!
-        ...
-        calendar.date(from:endComponents)!
-    }()
-    
     init(event: Event, dismiss: @escaping (EditAction) -> Void) {
         self.dismiss = dismiss
         self._event = State(initialValue: event)
     }
+    
+    @State var showAlert = false
+    @Environment(\.presentationMode) var presentationMode
+    @State var event: Event
+    var dismiss : (EditAction) -> Void
     
     var body: some View {
         NavigationView {
@@ -44,7 +36,7 @@ struct editEventsVC: View {
                     DatePicker(
                         "Date",
                         selection: $event.date,
-                        in: dateRange,
+                        in: Date.now...Date.now.addingTimeInterval(31536000),
                         displayedComponents: [.date, .hourAndMinute]
                     )
                         .datePickerStyle(GraphicalDatePickerStyle())
@@ -70,9 +62,9 @@ struct editEventsVC: View {
                     HStack {
                         Spacer()
                         Button {
-                            dismiss(.cancel)
+                            dismiss(.delete)
                         } label: {
-                            Text("Discard Changes")
+                            Text("Delete Eevnt")
                                 .foregroundColor(.red)
                         }
                         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
@@ -82,6 +74,12 @@ struct editEventsVC: View {
             }
             .navigationTitle("Edit event")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+            .navigationBarItems(trailing: Button(action: {
+                dismiss(.cancel)
+            }, label: {
+                Text("Cancel")
+                    .foregroundColor(.red)
+            }))
         }
     }
 }

@@ -11,20 +11,19 @@ enum EditAction1 {
     case cancel
     case delete
     case save (Activity)
-    
 }
 
 struct EditActivityVC: View {
-    @State var EditActivities: Activity
-    @Environment(\.presentationMode) var presentationMode
-    
-    var dismiss : (EditAction1) -> Void
     
     init(event: Activity, dismiss: @escaping (EditAction1) -> Void) {
         self.dismiss = dismiss
         self._EditActivities = State(initialValue: event)
-        
     }
+    
+    @State var EditActivities: Activity
+    @Environment(\.presentationMode) var presentationMode
+    
+    var dismiss : (EditAction1) -> Void
     
     var body: some View {
         NavigationView {
@@ -85,7 +84,6 @@ struct EditActivityVC: View {
 struct EditActivityVC_Previews: PreviewProvider {
     static var previews: some View {
         EditActivityVC(event:Activity(name1: "Brushing", timeSpending: 15, Percentage: "20%", Priority: "High Priority", minTime: 1, maxTime: 5)) { _ in
-            
         }.preferredColorScheme(.light)
     }
 }

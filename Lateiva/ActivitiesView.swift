@@ -85,16 +85,15 @@ struct ActiviesInSetVC: View {
                                 }
                             }
                         }
-                        //activty.activities.remove(at: activty.activities.firstIndex(of: selectedEvent1!)!)
                     case .save(let event):
                         print(event)
                         for (index, activity) in singleActivitySet.activities.enumerated(){
                             if activity.id == event.id {
                                 singleActivitySet.activities[index] = event
                                 print(singleActivitySet.activities)
-                                
                             }
                         }
+                        
                         for (index, activity) in setsa.enumerated() {
                             if activity.id == singleActivitySet.id {
                                 setsa[index] = singleActivitySet

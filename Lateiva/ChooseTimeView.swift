@@ -11,18 +11,9 @@ struct startTimeVC: View {
     
     init(setsa: Binding<[ActivitySets]>) {
         self._setsa = setsa
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4627450980392157, green: 0.4235294117647059, blue: 0.8196078431372549))]
-        
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))]
     }
     
-    @Binding var setsa: [ActivitySets]
-    var timeDiff: Int {
-        return (Calendar.current.dateComponents([.minute], from: date, to: date1).minute ?? 0)
-    }
-    @State private var date = Date()
-    @State private var date1 = Date()
-    
+    var time1 = [0]
     let dateRange: ClosedRange<Date> = {
         let calendar = Calendar.current
         let startComponents = DateComponents(year: 2021, month: 1, day: 1)
@@ -31,8 +22,14 @@ struct startTimeVC: View {
         ...
         calendar.date(from:endComponents)!
     }()
-    var time1 = [0]
     
+    @Binding var setsa: [ActivitySets]
+    var timeDiff: Int {
+        return (Calendar.current.dateComponents([.minute], from: date, to: date1).minute ?? 0)
+    }
+    @State private var date = Date()
+    @State private var date1 = Date()
+
     var body: some View {
         Form{
             Section {
@@ -53,7 +50,7 @@ struct startTimeVC: View {
             
             Section() {
                 if timeDiff < 0{
-                    Text("Tommorow")
+                Text("Tommorow")
                         .padding([.bottom, .trailing])
                         .frame(maxWidth: .infinity,alignment: .center)
                 }
@@ -69,8 +66,8 @@ struct startTimeVC: View {
                     .frame(maxWidth: .infinity, maxHeight: 150, alignment: .leading)
             } header: {
                 Text("When would you like to leave your house?").padding(.bottom)
-                
             }
+            
             NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
                 Button {
                     
@@ -86,10 +83,10 @@ struct startTimeVC: View {
         .navigationBarTitle(Text("Hello"))
         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
     }
-    
     func hidden(_ shouldHide: Bool) -> some View {
-        opacity(shouldHide ? 0 : 1)
-    }
+            opacity(shouldHide ? 0 : 1)
+        }
+    
     struct startTimeVC_Previews: PreviewProvider {
         static var previews: some View {
             startTimeVC(setsa: .constant([])).preferredColorScheme(.light)
