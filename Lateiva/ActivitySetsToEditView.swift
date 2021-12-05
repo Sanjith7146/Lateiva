@@ -29,6 +29,9 @@ struct ActivitySetsForEditVC: View {
                     .sheet(isPresented: $isSheetEnabled4){
                         newActivitySetVC(ActiviteSet: $setsa)
                     }
+                    .onAppear{
+                        UITableView.appearance().backgroundColor = .clear
+                    }
                 }.onDelete { offsets in
                     setsa.remove(atOffsets: offsets)
                     
@@ -40,6 +43,7 @@ struct ActivitySetsForEditVC: View {
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
             .navigationBarItems(trailing: Button(action: {
                 isSheetEnabled4 = true
+                UITableView.appearance().backgroundColor = .clear
             }, label: {
                 Image(systemName: "plus")
             }))

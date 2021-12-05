@@ -65,7 +65,6 @@ struct ContentView: View {
                 List {
                     Section(header: Text("Today")){
                         ForEach(filterevents) { event in
-                            
                             NavigationLink(destination: startTimeVC(setsa: $setsa)) {
                                 
                                 VStack(alignment:.leading){
@@ -114,11 +113,14 @@ struct ContentView: View {
                                 .listRowSeparator(.hidden)
                                 
                                 
-                            }.padding()
+                            }   .padding()
                                 .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
                                 .cornerRadius(20)
                                 .padding(.vertical, 1)
                                 .listRowSeparator(.hidden)
+                                .onAppear{
+                                    UITableView.appearance().backgroundColor = .clear
+                                }
                         }
                     }
                     .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
@@ -172,11 +174,14 @@ struct ContentView: View {
                                     .cornerRadius(20)
                                     .padding(.vertical, 1)
                                     .listRowSeparator(.hidden)
-                                    .padding()
-                                    .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
-                                    .cornerRadius(20)
-                                    .padding(.vertical, 1)
-                                    .listRowSeparator(.hidden)
+                                }
+                                .padding()
+                                .background(Color(hue: 0.742, saturation: 0.149, brightness: 0.99))
+                                .cornerRadius(20)
+                                .padding(.vertical, 1)
+                                .listRowSeparator(.hidden)
+                                .onAppear{
+                                    UITableView.appearance().backgroundColor = .clear
                                 }
                             }
                         }

@@ -18,6 +18,7 @@ struct EditActivityVC: View {
     init(event: Activity, dismiss: @escaping (EditAction1) -> Void) {
         self.dismiss = dismiss
         self._EditActivities = State(initialValue: event)
+        UITableView.appearance().backgroundColor = UIColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9686274509803922))
     }
     
     @State var EditActivities: Activity
@@ -55,6 +56,7 @@ struct EditActivityVC: View {
                         Spacer()
                         Button {
                             dismiss(.save(EditActivities))
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
@@ -67,6 +69,7 @@ struct EditActivityVC: View {
                         Button {
                             dismiss(.cancel)
                             presentationMode.wrappedValue.dismiss()
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
                             Text("Discard Changes")
                                 .foregroundColor(.red)
@@ -78,6 +81,7 @@ struct EditActivityVC: View {
             .navigationTitle("Edit Activity")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
         }
+        
     }
 }
 

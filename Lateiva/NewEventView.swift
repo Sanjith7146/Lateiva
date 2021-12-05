@@ -17,7 +17,6 @@ struct newEventVC: View {
     
     var body: some View {
         NavigationView {
-            
             Form {
                 Section(header: Text("Information")) {
                     TextField("Name", text: $eventsss.name).listRowSeparator(.visible)
@@ -42,6 +41,7 @@ struct newEventVC: View {
                         Button {
                             presentationMode.wrappedValue.dismiss()
                             evente.append(eventsss)
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
@@ -54,6 +54,7 @@ struct newEventVC: View {
                         Spacer()
                         Button {
                             presentationMode.wrappedValue.dismiss()
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
                             Text("Cancel")
                                 .foregroundColor(.red)
@@ -65,12 +66,14 @@ struct newEventVC: View {
             }
             .navigationTitle("New event")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+        }.onAppear{
+            UITableView.appearance().backgroundColor = UIColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9686274509803922))
         }
     }
 }
 
 struct newEventVC_Previews: PreviewProvider {
     static var previews: some View {
-        newEventVC(evente: .constant([])).preferredColorScheme(.light)
+        newEventVC(evente: .constant([]))
     }
 }

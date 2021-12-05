@@ -18,6 +18,7 @@ struct editEventsVC: View {
     init(event: Event, dismiss: @escaping (EditAction) -> Void) {
         self.dismiss = dismiss
         self._event = State(initialValue: event)
+        UITableView.appearance().backgroundColor = UIColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9686274509803922))
     }
     
     @State var showAlert = false
@@ -42,7 +43,6 @@ struct editEventsVC: View {
                         .datePickerStyle(GraphicalDatePickerStyle())
                         .font(.system(size: 18))
                         .foregroundColor(Color(red: 0.796, green: 0.796, blue: 0.805))
-                        .padding(.bottom)
                 }
                 
                 Section {
@@ -50,6 +50,7 @@ struct editEventsVC: View {
                         Spacer()
                         Button {
                             dismiss(.save(event))
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
                             Text("Save")
                             
@@ -63,6 +64,7 @@ struct editEventsVC: View {
                         Spacer()
                         Button {
                             dismiss(.cancel)
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
                             Text("Discard Changes")
                                 .foregroundColor(.red)
@@ -75,8 +77,9 @@ struct editEventsVC: View {
                         Spacer()
                         Button {
                             dismiss(.delete)
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
-                            Text("Delete Eevnt")
+                            Text("Delete Event")
                                 .foregroundColor(.red)
                         }
                         .frame(maxWidth: .infinity, minHeight: 40, maxHeight: 60)
@@ -86,6 +89,8 @@ struct editEventsVC: View {
             }
             .navigationTitle("Edit event")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+        }.onAppear{
+            UITableView.appearance().backgroundColor = .clear
         }
     }
 }

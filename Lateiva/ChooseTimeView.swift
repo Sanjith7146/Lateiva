@@ -50,8 +50,8 @@ struct startTimeVC: View {
             
             Section() {
                 if timeDiff < 0{
-                    Text("Tommorow")
-                        .padding([.bottom, .trailing])
+                    Text("Tommorow:")
+                        .padding([.top, .bottom, .trailing])
                         .frame(maxWidth: .infinity,alignment: .center)
                 }
                 DatePicker(
@@ -70,7 +70,7 @@ struct startTimeVC: View {
             
             NavigationLink(destination: chooseActivitySetVC(set: $setsa, timeDiff: timeDiff)){
                 Button {
-                    
+                    UITableView.appearance().backgroundColor = .clear
                 } label: {
                     
                     Text("Continue")
@@ -79,10 +79,18 @@ struct startTimeVC: View {
                         .frame(maxWidth: .infinity, minHeight: 60)
                 }
             }
+            .onAppear{
+                UITableView.appearance().backgroundColor = .clear
+            }
         }
         .navigationBarTitle(Text("Hello"))
         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+        .onAppear{
+            UITableView.appearance().backgroundColor = UIColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9686274509803922))
+        }
+        
     }
+    
     func hidden(_ shouldHide: Bool) -> some View {
         opacity(shouldHide ? 0 : 1)
     }

@@ -11,6 +11,7 @@ struct chooseActivitySetVC: View {
     
     @Binding var set: [ActivitySets]
     var timeDiff: Int
+    @State var showAlert = false
     
     var body: some View {
         VStack(alignment:.leading){
@@ -30,7 +31,12 @@ struct chooseActivitySetVC: View {
                             .fontWeight(.semibold)
                             .padding(.vertical)
                     }
+                    
                 }.listRowBackground(Color(hue: 0.742, saturation: 0.049, brightness: 0.984))
+                    .onAppear{
+                        UITableView.appearance().backgroundColor = .clear
+                        
+                    }
             }
         }.navigationBarTitle("Activity Sets")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewActivityVC: View {
     
+    
     @Environment(\.presentationMode) var presentationMode
     @State var newActivity = Activity(name1: "", timeSpending: 0, Percentage: "", Priority: "", minTime: 0 , maxTime: 1)
     var newlyMadeActivity: (Activity) -> Void
@@ -52,7 +53,7 @@ struct NewActivityVC: View {
                         Button {
                             self.presentationMode.wrappedValue.dismiss();  newlyMadeActivity(newActivity)
                             print(newActivity.Priority)
-                            
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
                             Text("Save")
                                 .foregroundColor(.blue)
@@ -64,6 +65,7 @@ struct NewActivityVC: View {
                         Spacer()
                         Button {
                             presentationMode.wrappedValue.dismiss()
+                            UITableView.appearance().backgroundColor = .clear
                         } label: {
                             Text("Cancel")
                                 .foregroundColor(.red)
@@ -74,6 +76,8 @@ struct NewActivityVC: View {
             }
             .navigationTitle("New Activity")
             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
+        }.onAppear{
+            UITableView.appearance().backgroundColor = UIColor(Color(red: 0.9490196078431372, green: 0.9490196078431372, blue: 0.9686274509803922))
         }
     }
 }

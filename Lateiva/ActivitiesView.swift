@@ -67,7 +67,6 @@ struct ActiviesInSetVC: View {
                 Image(systemName: "plus")
             })
             .navigationBarItems(trailing: EditButton())
-            .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
             .sheet(item: $selectedActivity){ selectedEvent1 in
                 EditActivityVC(event: selectedEvent1){editAction in
                     switch editAction {
