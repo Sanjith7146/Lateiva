@@ -29,7 +29,7 @@ struct startTimeVC: View {
     }
     @State private var date = Date()
     @State private var date1 = Date()
-
+    
     var body: some View {
         Form{
             Section {
@@ -50,7 +50,7 @@ struct startTimeVC: View {
             
             Section() {
                 if timeDiff < 0{
-                Text("Tommorow")
+                    Text("Tommorow")
                         .padding([.bottom, .trailing])
                         .frame(maxWidth: .infinity,alignment: .center)
                 }
@@ -84,8 +84,8 @@ struct startTimeVC: View {
         .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
     }
     func hidden(_ shouldHide: Bool) -> some View {
-            opacity(shouldHide ? 0 : 1)
-        }
+        opacity(shouldHide ? 0 : 1)
+    }
     
     struct startTimeVC_Previews: PreviewProvider {
         static var previews: some View {
