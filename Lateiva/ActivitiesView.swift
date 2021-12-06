@@ -63,6 +63,7 @@ struct ActiviesInSetVC: View {
             .navigationBarTitle(Text("Activities"))
             .navigationBarItems(trailing: Button(action: {
                 isSheetEnabled6 = true
+                    
             }) {
                 Image(systemName: "plus")
             })
@@ -112,6 +113,9 @@ struct ActiviesInSetVC: View {
                         }
                     }
                 }
+            }
+            .onAppear{
+                UITableView.appearance().backgroundColor = .clear
             }
     }
     

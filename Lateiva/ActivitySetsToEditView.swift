@@ -25,12 +25,12 @@ struct ActivitySetsForEditVC: View {
                                 .padding(.vertical)
                         }
                     }
+                    .onAppear{
+                        UITableView.appearance().backgroundColor = .clear
+                    }
                     .listRowBackground(Color(hue: 0.742, saturation: 0.049, brightness: 0.984))
                     .sheet(isPresented: $isSheetEnabled4){
                         newActivitySetVC(ActiviteSet: $setsa)
-                    }
-                    .onAppear{
-                        UITableView.appearance().backgroundColor = .clear
                     }
                 }.onDelete { offsets in
                     setsa.remove(atOffsets: offsets)

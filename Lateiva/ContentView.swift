@@ -217,6 +217,9 @@ struct ContentView: View {
             .sheet(isPresented: $isSheetEnabled2){
                 newEventVC(evente: $events)
             }
+            .onAppear{
+                UITableView.appearance().backgroundColor = .clear
+            }
         }
     }
 }
