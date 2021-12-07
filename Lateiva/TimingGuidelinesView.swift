@@ -34,7 +34,6 @@ struct TimeSpentVC: View {
                             .font(.system(size: 20))
                             .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                             .fontWeight(.bold)
-                            .padding(.bottom)
                             .lineLimit(3)
                             .fixedSize(horizontal: false, vertical: true)
                         
@@ -54,6 +53,7 @@ struct TimeSpentVC: View {
                             .fontWeight(.regular)
                             .lineLimit(3)
                             .fixedSize(horizontal: false, vertical: true)
+                            .padding(.top)
                         
                         Spacer()
                         
@@ -62,16 +62,18 @@ struct TimeSpentVC: View {
                                 .font(.system(size: 18))
                                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                 .fontWeight(.medium)
-                                .padding(.bottom)
+                                .padding(.top)
                         }
                         else {
                             Text("\(timings.timeSpending) min")
                                 .font(.system(size: 18))
                                 .foregroundColor(Color(red: 0.4235294117647059, green: 0.11764705882352941, blue: 0.5254901960784314))
                                 .fontWeight(.medium)
-                                .padding(.bottom)
+                                .padding(.top)
                         }
                     }
+                    
+                    
                 }
                 .onAppear{
                     for n in activityArray{
