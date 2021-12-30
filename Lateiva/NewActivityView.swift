@@ -11,7 +11,7 @@ struct NewActivityVC: View {
     
     
     @Environment(\.presentationMode) var presentationMode
-    @State var newActivity = Activity(name1: "", timeSpending: 0, Percentage: "", Priority: "", minTime: 0 , maxTime: 1)
+    @State var newActivity = Activity(name1: "", timeSpending: 0, Percentage: "", Priority: "", minTime: 1 , maxTime: 2)
     var newlyMadeActivity: (Activity) -> Void
     
     let formatter: NumberFormatter = {
@@ -30,7 +30,7 @@ struct NewActivityVC: View {
                 }
                 Section(header: Text("Time")) {
                     
-                    Stepper("Min time: \(newActivity.minTime)", value: $newActivity.minTime, in: 0...newActivity.maxTime)
+                    Stepper("Min time: \(newActivity.minTime)", value: $newActivity.minTime, in: 1...newActivity.maxTime)
                     
                     Stepper("Max Time: \(newActivity.maxTime)", value: $newActivity.maxTime, in: newActivity.minTime...1000000000)
                 }

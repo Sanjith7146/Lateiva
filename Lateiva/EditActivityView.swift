@@ -35,7 +35,7 @@ struct EditActivityVC: View {
                 }
                 Section(header: Text("Time")) {
                     
-                    Stepper("Min time: \(EditActivities.minTime)", value: $EditActivities.minTime, in: 0...EditActivities.maxTime)
+                    Stepper("Min time: \(EditActivities.minTime)", value: $EditActivities.minTime, in: 1...EditActivities.maxTime)
                     
                     Stepper("Max time: \(EditActivities.maxTime)", value: $EditActivities.maxTime, in: EditActivities.minTime...100000000000)
                 }
